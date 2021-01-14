@@ -3,7 +3,7 @@ provider "aws" {
   region = var.aws_region
 }
 
-# Resource: VPC
+# Resource: EC2
 resource "aws_instance" "myEC2" {
   ami           = "ami-032598fcc7e9d1c7a"
   instance_type = "t2.micro"
