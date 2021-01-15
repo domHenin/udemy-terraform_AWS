@@ -5,9 +5,9 @@ provider "aws" {
 
 # Resource: EC2
 resource "aws_instance" "myEC2" {
-  ami                 = "ami-032598fcc7e9d1c7a"
-  instance_type       = "t2.micro"
-  aws_security_groups = [aws_security_group.web-traffic.name]
+  ami             = "ami-032598fcc7e9d1c7a"
+  instance_type   = "t2.micro"
+  security_groups = [aws_security_group.web-traffic.name]
 }
 
 # Resource: Elastic IP
