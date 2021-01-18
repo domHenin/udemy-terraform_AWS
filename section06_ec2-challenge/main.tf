@@ -20,8 +20,9 @@ output "ip_output" {
 
 # Resource: EC2 Instance: web-server
 resource "aws_instance" "ws_container" {
-  ami           = "ami-032598fcc7e9d1c7a"
-  instance_type = "t2.micro"
+  ami             = "ami-032598fcc7e9d1c7a"
+  instance_type   = "t2.micro"
+  security_groups = [aws_security_group.web_serverSG.name]
 
   connection {
     type = "ssh"
@@ -41,8 +42,13 @@ resource "aws_eip" "elasticIP" {
   vpc      = true
 }
 
-# Output: Elastic IP: web-server
-output "out_eip" {
+# Output: Elastic IP: db-container private ip
+output "PrivateIP" {
+  value = aws_instance.db_container.private_ip
+}
+
+# Output: Elastic IP: web-server public ip
+output "PublicIP" {
   value = aws_eip.elasticIP.public_ip
 }
 
