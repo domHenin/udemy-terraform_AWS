@@ -1,4 +1,8 @@
 # Variable: AWS Region 
 variable "aws_region" {
-  default = "us-east-1"
+  description = "region of terraform"
+  type        = string
 }
+
+
+

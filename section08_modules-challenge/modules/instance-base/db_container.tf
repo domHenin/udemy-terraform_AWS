@@ -14,7 +14,3 @@ output "privateIP" {
 }
 
 
-# TODO:
-// create a database using ec2
-// provide tag
-// output private ip
